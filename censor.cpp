@@ -16,7 +16,7 @@ int main()
   for (string s; cin >> s;)
     words.push_back(s);
 
-  for (int i = 0; i < words.size(); ++i) {
+  for (unsigned long i = 0; i < words.size(); ++i) {
       for (string cWord : cWords) {
       if (words[i] == cWord) {
 	words[i] = "BLEEP";
@@ -28,4 +28,5 @@ int main()
   for (string word : words) {
     cout << word << ' ';
   }
+  cout << endl;
 }

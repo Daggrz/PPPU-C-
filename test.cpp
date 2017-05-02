@@ -2,11 +2,6 @@
 
 int main()
 {
-  string s;
-  cout << "Please enter a string: ";
-  cin >> s;
 
-  for(char c : s) {
-    cout << c << endl;
-  }
+
 }

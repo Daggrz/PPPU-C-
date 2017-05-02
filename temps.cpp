@@ -10,13 +10,16 @@ int main()
     temps.push_back(temp);
   }
 
+
+  sort(temps);
+  
   cout << "Your tempratures:\n";
 
   for (double temp : temps) {
     cout << temp << endl;
   }
 
-  double sum;
+  double sum = 0;
   for (double temp : temps) {
     sum += temp;
   }
@@ -24,5 +27,10 @@ int main()
   cout << "Your average: " << sum/temps.size() << endl;
 
   sort(temps);
-  cout << "Median temprature: " << temps[temps.size()/2] << endl;
+  cout << "Median temprature: ";
+  if (temps.size()%2 == 0) {
+    cout << temps[(temps.size()/2 - 1)] + ((temps[temps.size()/2] - temps[(temps.size()/2 - 1)])/2) << endl;
+  } else {
+    cout << temps[temps.size()/2] << endl;
+  }
 }
