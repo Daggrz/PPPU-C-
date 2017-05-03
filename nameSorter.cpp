@@ -1,10 +1,4 @@
-#include <iostream>
-#include <algorithm>
-#include <string>
-#include <vector>
-#include <cmath>
-
-using namespace std;
+#include "std_lib_facilities.h"
 
 void transpose (string& str1, string& str2) {
   string nR;

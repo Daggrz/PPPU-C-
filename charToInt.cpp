@@ -3,7 +3,7 @@
 int main()
 {
   for (int i = 0; i < 256 ; i++) {
-    char c = i;
+    char c = i; // TODO (sean): finish this
     if (i == 8) {
       cout << "Bullet\t" << i << endl;
     } else if (i == 9) {

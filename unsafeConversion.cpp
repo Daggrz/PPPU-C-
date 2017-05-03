@@ -1,23 +1,16 @@
-#include <iostream>
-#include <algorithm>
-#include <string>
-#include <vector>
-#include <cmath>
-
-using namespace std;
+#include "std_lib_facilities.h"
 
 int main()
 {
-  /*
+  double d = 0 ;
 
-    {} list notation in this context is known as 
-    universal and uniform initialization
-
-  */
-  double x {2.7};
-  int y {x};
-  int a {1000};
-  char b {a};
-  char b1 {1000};
-  char b2 {48};
+  while (cin >> d) {
+    int i = d;
+    char c = i;
+    int i2 = c;
+    cout << "d==" << d << endl
+	 << "i==" << i << endl
+	 << "i2==" << i2 << endl
+	 << "char(" << c << ")\n";
+  }
 }

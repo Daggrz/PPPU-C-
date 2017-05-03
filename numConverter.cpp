@@ -1,85 +1,33 @@
 #include "std_lib_facilities.h"
 
-using namespace std;
-
 int main() {
-  int n = -1;
   string s = "";
-  int aN[10] = {0,1,2,3,4,5,6,7,8,9};
   vector<string> nums = {"zero","one","two","three","four","five","six","seven","eight","nine"};
-  cout << "Please enter an integer (1-9), or a text form of that number in undercase: ";
-  for (;;) {
-    if (cin >> n) {
-      if (n != -1) {
-	switch (n) {
-	case 0: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 1: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 2: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 3: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 4: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 5: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 6: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 7: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 8: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	case 9: {
-	  cout << nums[n]<< endl;
-	  n = -1;
-	  break;
-	}
-	default: {
-	  cout << "Integer is not in range 1-9.\n";
-	  n = -1;
-	  break;
-	} 
-	}
+  cout << "Please enter an integer (1-9), or a word form of that number in undercase: ";
+  bool notWord = true;
+  bool notChar = true;
+  while (cin >> s) {
+    for (int i = 0; i < 10; ++i) { 			          // for numbers 0 through 9
+      if (s == nums[i]) {	                                  // if string is a number in word form
+	cout << i << endl;
+	notWord = false;
+      } else if (atoi(s.c_str()) == i && s.length() == 1) {       // if string is in integer form
+	cout << nums[i] << endl;
+	notChar = false;
       }
     }
-    if (s != "") {
-      for (unsigned long i = 0; i <= 9; i++) {
-	if (s == nums[i]) {
-	  cout << i << endl;
-	  s = "";
-	} else {
-	  cout << "That is not a number I've heard of.\n";
-	  s = "";
-	}
-      }
+    
+    if (s.length() > 1 && notWord) {
+      if(atoi(s.c_str()) > 9) {
+	cout << "Number too high.\n";
+      } else if (atoi(s.c_str()) < 0) {
+	cout << "Number too low.\n";
+      } else cout << "I don't recognize that word as a number.\n";
+    } else if (s.length() == 1 &&notChar){
+      cout << "I don't recognize that character as a number.\n";
     }
+
+    notWord = true;
+    notChar = true;
   }
 }
